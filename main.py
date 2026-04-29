@@ -31,10 +31,7 @@ class SnakeGame:
         self.master.bind("<Down>", lambda event: self.change_direction("Down"))
         self.master.bind("<Left>", lambda event: self.change_direction("Left"))
         self.master.bind("<Right>", lambda event: self.change_direction("Right"))
-        self.master.bind("w", lambda event: self.change_direction("Up"))
-        self.master.bind("s", lambda event: self.change_direction("Down"))
-        self.master.bind("a", lambda event: self.change_direction("Left"))
-        self.master.bind("d", lambda event: self.change_direction("Right"))
+        
         self.master.bind("<space>", lambda event: self.restart())
 
         self.reset_game()
