@@ -1,0 +1,7 @@
+﻿__pycache__/
+*.pyc
+root/
+snake_game/
+.vscode/
+.DS_Store
+
