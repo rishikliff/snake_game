@@ -1,4 +1,4 @@
-import random
+﻿import random
 import tkinter as tk
 
 CELL_SIZE = 20
@@ -34,7 +34,12 @@ class SnakeGame:
         
         self.master.bind("<space>", lambda event: self.restart())
 
+        # Bind 'P' key for pause/resume
+        self.master.bind("<p>", lambda event: self.toggle_pause())
+        self.master.bind("<P>", lambda event: self.toggle_pause())
+
         self.reset_game()
+        self.paused = False
         self.running = True
         self.update()
 
@@ -74,7 +79,7 @@ class SnakeGame:
             self.next_direction = new_direction
 
     def update(self):
-        if not self.game_over:
+        if not self.game_over and not self.paused:
             self.direction = self.next_direction
             head_x, head_y = self.snake[0]
             if self.direction == "Up":
@@ -108,6 +113,11 @@ class SnakeGame:
                 self.draw()
         self.master.after(UPDATE_DELAY, self.update)
 
+    def toggle_pause(self):
+        if not self.game_over:
+            self.paused = not self.paused
+            self.draw()
+
     def draw(self):
         self.canvas.delete("all")
 
@@ -125,6 +135,15 @@ class SnakeGame:
                 text="Game Over\nPress Space to Restart",
                 fill="#ffffff",
                 font=("Consolas", 24, "bold"),
+                justify="center",
+            )
+        elif self.paused:
+            self.canvas.create_text(
+                GRID_WIDTH * CELL_SIZE / 2,
+                GRID_HEIGHT * CELL_SIZE / 2,
+                text="Paused",
+                fill="#ffff00",
+                font=("Consolas", 32, "bold"),
                 justify="center",
             )
 
