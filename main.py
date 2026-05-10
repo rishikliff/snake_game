@@ -4,7 +4,7 @@ import tkinter as tk
 CELL_SIZE = 20
 GRID_WIDTH = 30
 GRID_HEIGHT = 20
-UPDATE_DELAY = 150
+UPDATE_DELAY = 100
 
 class SnakeGame:
     def __init__(self, master):
