@@ -1,4 +1,4 @@
-import random
+﻿import random
 import tkinter as tk
 
 CELL_SIZE = 20
@@ -9,7 +9,7 @@ UPDATE_DELAY = 150
 class SnakeGame:
     def __init__(self, master):
         self.master = master
-        self.master.title("Simple Snake Game")
+        self.master.title("classic Snake Game")
         self.canvas = tk.Canvas(
             self.master,
             width=GRID_WIDTH * CELL_SIZE,
