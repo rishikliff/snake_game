@@ -1,9 +1,9 @@
 ﻿import random
 import tkinter as tk
 
-CELL_SIZE = 20
-GRID_WIDTH = 30
-GRID_HEIGHT = 20
+CELL_SIZE = 30
+GRID_WIDTH = 50
+GRID_HEIGHT = 70
 UPDATE_DELAY = 100
 
 class SnakeGame:
@@ -121,8 +121,7 @@ class SnakeGame:
     def draw(self):
         self.canvas.delete("all")
 
-        for x, y in self.apples:
-            self.draw_cell(x, y, "#ff5555")
+        self.draw_cell(x, y, "#ff5555")
 
         for index, (x, y) in enumerate(self.snake):
             color = "#53d769" if index == 0 else "#66ff88"
