@@ -174,7 +174,7 @@ class SnakeGame:
 def main():
     root = tk.Tk()
 
-        if getattr(self, 'just_restarted', False):
+    if getattr(self, 'just_restarted', False):
             self.canvas.create_text(
                 GRID_WIDTH * CELL_SIZE / 2,
                 GRID_HEIGHT * CELL_SIZE / 2,
